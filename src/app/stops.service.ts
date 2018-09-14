@@ -6,12 +6,17 @@ import { Arrival} from './arrival';
 })
 export class StopsService {
 
+  stops : BusStop[] = [new BusStop('London Waterloo', [new Arrival(1, "Bournemouth", 3),(new Arrival(7, "Brazil", 12)),(new Arrival(1, "Bournemouth", 15))], "1"),
+    new BusStop('London Paddington', [new Arrival( 1, "Bournemouth", 4),(new Arrival(7, "Brazil", 12)),(new Arrival(1, "Bournemouth", 15))], "2"),
+    new BusStop('Poplar', [new Arrival(1, "Bournemouth", 5),(new Arrival(7, "Brazil", 12)),(new Arrival(1, "Bournemouth", 15))], "3")]
+
   constructor() { }
 
   getStops() : BusStop[] {
+    return this.stops; 
+  }
 
-    return [new BusStop('London Waterloo', [new Arrival(1, "Bournemouth", 3),(new Arrival(7, "Brazil", 12)),(new Arrival(1, "Bournemouth", 15))]),
-    new BusStop('London Paddington', [new Arrival(1, "Bournemouth", 3),(new Arrival(7, "Brazil", 12)),(new Arrival(1, "Bournemouth", 15))]),
-    new BusStop('Poplar', [new Arrival(1, "Bournemouth", 3),(new Arrival(7, "Brazil", 12)),(new Arrival(1, "Bournemouth", 15))])];
+  getStop(id :string) {
+    return this.stops.find(x => x.id===id);
   }
 }

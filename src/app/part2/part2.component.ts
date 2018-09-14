@@ -13,9 +13,7 @@ export class Part2Component implements OnInit {
   
   selectedStop : BusStop;
   stops : BusStop[];
-  constructor(private stopsService : StopsService) { 
-    
-    this.stops = this.stopsService.getStops();
+  constructor( private stopsService : StopsService) { 
 
   }
   
@@ -24,6 +22,10 @@ export class Part2Component implements OnInit {
   }
   
   ngOnInit() {
+    
+    this.stops = this.stopsService.getStops();
   }
+
+ 
 
 }

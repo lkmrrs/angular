@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BusStop } from '../bus-stop';
+import { ActivatedRoute } from '@angular/router';
+import { StopsService } from '../stops.service';
 
 @Component({
   selector: 'app-part1comp',
@@ -8,12 +10,13 @@ import { BusStop } from '../bus-stop';
 })
 export class Part1compComponent implements OnInit {
 
-  @Input() stop : BusStop;
-
-  constructor() {
+  stop : BusStop;
+  constructor(private route: ActivatedRoute, private stopsService : StopsService) {
     
   }
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id')
+    this.stop = this.stopsService.getStop(id);
   }
 
 }

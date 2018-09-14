@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+
 export class Arrival {
     busNumber : number;
     location : string;
