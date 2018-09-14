@@ -4,12 +4,5 @@
     This is {{ title }}
   </h1>
 </div>
-<h2>Arrivals for {{ busStop.location }}</h2>
-<ol>
-  <h2>
-  <li *ngFor = "let arrival of busStop.arrivals">
-      {{arrival.busNumber}} towards {{arrival.location}} in {{arrival.time}} minutes
-  </li>
-  </h2> 
-</ol>
+<app-part2></app-part2>
 

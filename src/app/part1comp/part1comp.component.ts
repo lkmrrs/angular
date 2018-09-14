@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BusStop } from '../bus-stop';
 
 @Component({
   selector: 'app-part1comp',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Part1compComponent implements OnInit {
 
-  constructor() { }
+  @Input() stop : BusStop;
 
+  constructor() {
+    
+  }
   ngOnInit() {
   }
 

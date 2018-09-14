@@ -1,3 +1,10 @@
-<p>
-  part1comp works!
-</p>
+<h2>List of stops for {{stop.location}}</h2>
+<ol>
+  <h2>
+  <li *ngFor="let arrival of stop.arrivals">
+    {{arrival.busNumber}} towards {{arrival.location}} in {{arrival.time}} minutes
+      <!-- {{stop.location}} -->
+  </li>
+  </h2>
+  
+</ol>
